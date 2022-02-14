@@ -1,0 +1,33 @@
+listen_court_events.001 {
+	type = character_event
+	title = "Decisions" ##listen_court_events.001.t
+	desc = "You decide to focus your efforts on..." ##listen_court_events.001.desc
+	theme = intrigue
+	left_portait = {
+			character = root
+			animation = scheme
+	}
+	#Option A: Listen for rumors in court
+	option = {
+		name = "Listen for rumors in court"##court_events.001.a
+		trigger_event = {
+			id = yearly.5040
+			days = 30
+		}
+	}
+	#Option B: Focus on finding schemes against you
+	option = {
+		name = "Focus on finding schemes against you"##court_events.002.b
+		any_targeting_scheme = {
+			expose_scheme = yes
+		}
+	}
+	#Option C: Look for secrets on neighboring courtiers/rulers by talking to visitors
+	option = {
+		name = "Talk to foreign visitors in your court to find secrets about your neighbors."##court_events.003.c
+		trigger_event = {
+			id = listen_court_events.002
+			days = 30
+		}
+	}
+}

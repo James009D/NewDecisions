@@ -1,0 +1,145 @@
+namespace = visit_market
+
+visit_market.001 = {
+	type = character_event
+	title = "Travel to the Market"
+	desc = "It's a nice day out, you travel to the market where you decide what you would like to do."
+	theme = hunting #stewardship_wealth_focus
+	override_background = {
+		event_background = terrain_scope #market
+	}
+	left_portrait = {
+		character = root
+		animation = personality_content #personality_greedy
+	}
+
+	immediate = {
+		capital_county = {
+			save_scope_as = county
+		}
+	}
+
+	option = {
+		name = "Continue" #visit_market.001.a
+		trait = profligate
+		skill = stewardship
+			trigger_event = {
+				on_action = visiting_market_shopping
+			}
+		#remove_short_term_gold = medium_gold_value
+		#add_stress = medium_stress_loss
+	}
+}
+
+visit_market.002 = {
+	type = character_event
+	title = "Shopping at the Market"
+	desc = "You purchase some goodies at the market and this makes you happy."
+	theme = stewardship_wealth_focus
+	override_background = {
+		event_background = market
+	}
+	left_portrait = {
+		character = root
+		animation = personality_greedy
+	}
+
+	immediate = {
+		capital_county = {
+			save_scope_as = county
+		}
+	}
+
+	option = {
+		name = visit_market.002.a
+		trait = profligate
+		skill = stewardship
+		remove_short_term_gold = medium_gold_value
+		add_stress = medium_stress_loss
+	}
+}
+
+visit_market.003 = {
+	type = character_event
+	title = "Shopping for Books"
+	desc = "You purchase a book at the market."
+	theme = stewardship_wealth_focus
+	override_background = {
+		event_background = market
+	}
+	left_portrait = {
+		character = root
+		animation = personality_greedy
+	}
+
+	immediate = {
+		capital_county = {
+			save_scope_as = county
+		}
+	}
+
+	option = {
+		name = "Buy a book" #visit_market.003.a
+		trait = profligate
+		skill = stewardship
+		remove_short_term_gold = medium_gold_value
+		add_stress = low_stress_loss
+		add_stress = minor_stress_loss
+	}
+}
+
+visit_market.004 = {
+	type = character_event
+	title = "Shopping for Weapons"
+	desc = "You browes for a while and you purchase a new weapon."
+	theme = stewardship_wealth_focus
+	override_background = {
+		event_background = market
+	}
+	left_portrait = {
+		character = root
+		animation = war_attacker
+	}
+
+	immediate = {
+		capital_county = {
+			save_scope_as = county
+		}
+	}
+
+	option = {
+		name = "Purchase a weapon" #visit_market.004.a
+		trait = profligate
+		skill = stewardship
+		remove_short_term_gold = medium_gold_value
+		add_stress = medium_stress_loss
+	}
+}
+
+visit_market.005 = {
+	type = character_event
+	title = "Shopping for Armor"
+	desc = "You purchase new armor."
+	theme = stewardship_wealth_focus
+	override_background = {
+		event_background = market
+	}
+	left_portrait = {
+		character = root
+		animation = war_defender
+	}
+
+	immediate = {
+		capital_county = {
+			save_scope_as = county
+		}
+	}
+
+	option = {
+		name = "Purchase some armor" #visit_market.005.a
+		trait = profligate
+		skill = stewardship
+		remove_short_term_gold = medium_gold_value
+		add_stress = medium_stress_loss
+	}
+}

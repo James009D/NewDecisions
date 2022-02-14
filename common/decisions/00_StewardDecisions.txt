@@ -1,0 +1,60 @@
+﻿visit_market_decision = { 
+	picture = "gfx/interface/illustrations/decisions/decision_misc.dds"
+	title = "Visit the Market" #visit_market_decision_t
+	desc = "Take a stroll into your holding and visit the local market" #visit_market_decision_desc
+	selection_tooltip = "Visit the market where you can look around, browse the wears, and possibly find something new and unique..." #visit_market_decision_tooltip
+
+	ai_check_interval = 200
+
+	cooldown = { days = 1095 }
+
+	is_shown = {
+	}
+
+	is_valid_showing_failures_only = {
+		is_available = yes
+		short_term_gold >= medium_gold_value
+	}
+
+	effect = {
+		show_as_tooltip = { #The effect is actually applied in the event itself
+			remove_short_term_gold = medium_gold_value
+		}
+		custom_tooltip = stress_loss_drunkard_decision_effect_tooltip
+
+
+		trigger_event = {
+			on_action = visiting_market
+			#id = visit_market.001 #works!
+			#id = stress_trait_coping_decisions.4001 #works
+			#id = yearly.5040 #works
+			#on_action = stress_loss_profligate
+			#on_action = visit_market.001 	#doesnt work
+			#on_action = yearly.5040			#doesnt work
+			#event = yearly.5040
+		}
+	}
+	
+	ai_potential = {
+		always = yes
+	}
+
+	ai_will_do = {
+		base = 0
+
+		modifier = {
+			add = 5
+			stress > low_medium_stress
+		}
+
+		modifier = {
+			add = 10
+			stress > medium_stress
+		}
+
+		modifier = {
+			add = 15
+			stress > high_stress
+		}
+	}
+}

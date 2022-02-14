@@ -1,0 +1,19 @@
+#Possible events for when you visit the market
+
+visiting_market= {
+	random_events = {
+		25 = visit_market.001 #Uneventful Shopping
+		0 = visit_market.010 #Friend Meeting
+		0 = visit_market.020 #Muggers
+		0 = visit_market.030 #Get lost
+	}
+}
+
+visiting_market_shopping {
+	random_events = {
+		25 = visit_market.002 #Stress Relief
+		25 = visit_market.003 #Buy a book
+		25 = visit_market.004 #Buy a weapon
+		25 = visit_market.005 #Buy some armor
+	}
+}
