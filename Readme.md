@@ -1,4 +1,4 @@
-Crusader Kingd 3 - New and Extra Decisions Mod
+#Crusader Kingd 3 - New and Extra Decisions Mod
  
 Home of James009's and Beenieweenie's Extended Decisions *wt* mod for Crusader Kings 3,
 
